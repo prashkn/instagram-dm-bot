@@ -1,6 +1,8 @@
 from selenium import webdriver
 from time import sleep
 
+#replace some of the strings with your own messages
+
 class IGbot:
     def __init__(self, username, password):
         self.driver = webdriver.Chrome()
@@ -40,7 +42,7 @@ class IGbot:
         self.driver.find_element_by_css_selector("input[type='radio'][id='igCoreRadioButtonreport_updated1']").click()
         self.driver.find_element_by_css_selector("input[type='radio'][id='igCoreRadioButtonlive_broadcast1']").click()
         sleep(1)
-        self.driver.get("enter someone's instagram here")
+        self.driver.get("https://www.instagram.com/accounthere/")
         sleep(2)
         self.driver.find_element_by_xpath('/html/body/div[1]/section/main/div/header/section/div[1]/div[1]/div/button')\
             .click()
@@ -49,11 +51,11 @@ class IGbot:
             .click()
         for x in range(20):
             self.driver.find_element_by_xpath('/html/body/div[1]/section/div/div[2]/div/div/div[2]/div[2]/div/div[2]/div/div/div[2]/textarea')\
-                .send_keys('hey')
+                .send_keys('messagehere')
             self.driver.find_element_by_xpath('/html/body/div[1]/section/div/div[2]/div/div/div[2]/div[2]/div/div[2]/div/div/div[3]/button')\
                 .click()
-            sleep(3)
+            sleep(0.75)
 
 
-IGbot('prashhbot', 'enteryourpasswordhere')
+IGbot('usernamehere', 'passwordhere')
 
